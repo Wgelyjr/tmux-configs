@@ -10,7 +10,7 @@ function memory_usage() {
         # Calculate the percentage of memory used with bc.
         percent=$(bc -l <<< "100 * $total / $used")
         # Feed the variables into awk and print the values with formating.
-        awk -v u=$used -v t=$total -v p=$percent 'BEGIN {printf "%sMi/%sMi", t, u}'
+        awk -v t=$total 'BEGIN {printf "%sMi",t}'
 
     fi
 
